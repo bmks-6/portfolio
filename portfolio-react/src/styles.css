@@ -1,0 +1,169 @@
+:root{
+  --bg0:#05070f;
+  --bg1:#070b18;
+  --card:#0b132b;
+  --card2:#0a1026;
+  --text:#dbeafe;
+  --muted:#93c5fd;
+  --blue:#2f6bff;
+  --blue2:#59a7ff;
+  --line:rgba(147,197,253,.18);
+  --shadow: 0 18px 50px rgba(0,0,0,.45);
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background:
+    radial-gradient(1000px 600px at 15% 10%, rgba(47,107,255,.35), transparent 60%),
+    radial-gradient(900px 550px at 90% 20%, rgba(89,167,255,.25), transparent 55%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+a{color:inherit; text-decoration:none}
+
+.container{width:min(1120px, 92vw); margin:0 auto;}
+
+.nav{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(5,7,15,.82), rgba(5,7,15,.55));
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
+.brand{display:flex; align-items:center; gap:10px; min-width: 240px;}
+.logo{
+  width:36px; height:36px; border-radius:12px;
+  background: linear-gradient(135deg, rgba(47,107,255,.95), rgba(89,167,255,.55));
+  box-shadow: 0 0 0 1px rgba(89,167,255,.3), 0 10px 40px rgba(47,107,255,.25);
+}
+.brand-title{font-weight:800; letter-spacing:.2px;}
+.brand-sub{font-size:12px; color:var(--muted); margin-top:2px;}
+
+.nav-links{display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end;}
+.nav-links a{
+  font-size:13px; color:rgba(219,234,254,.9);
+  padding:8px 10px; border-radius:12px;
+  border:1px solid transparent;
+}
+.nav-links a:hover{
+  border-color: rgba(89,167,255,.25);
+  background: rgba(11,19,43,.55);
+}
+
+.hero{padding:56px 0 30px;}
+.hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:22px; align-items:stretch;}
+
+@media (max-width: 900px){ .hero-grid{grid-template-columns: 1fr; } .brand{min-width:auto;} }
+
+.card{
+  background: linear-gradient(180deg, rgba(11,19,43,.85), rgba(10,16,38,.8));
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.hero-left{padding:26px; position:relative; overflow:hidden;}
+.hero-left:before{
+  content:"";
+  position:absolute; inset:-2px;
+  background: radial-gradient(500px 220px at 10% 0%, rgba(47,107,255,.35), transparent 60%);
+  pointer-events:none;
+}
+.hero-left > *{position:relative;}
+
+.pill-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;}
+.pill{
+  font-size:12px;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(89,167,255,.25);
+  background: rgba(11,19,43,.55);
+  color: rgba(219,234,254,.95);
+}
+
+.h1{font-size:42px; line-height:1.05; margin:0 0 12px; letter-spacing:-.5px;}
+@media(max-width: 520px){ .h1{font-size:34px;} }
+
+.gradient-text{
+  background: linear-gradient(90deg, #b6d4ff, #2f6bff 45%, #59a7ff 90%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+.hero-desc{color: rgba(219,234,254,.88); margin:0 0 18px; font-size:15px; line-height:1.6; max-width: 64ch;}
+
+.cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top: 10px;}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px; border-radius:14px;
+  border: 1px solid rgba(89,167,255,.25);
+  background: rgba(11,19,43,.45);
+  color: rgba(219,234,254,.95);
+  font-weight:700; font-size:13px;
+}
+.btn.primary{
+  background: linear-gradient(135deg, rgba(47,107,255,.95), rgba(89,167,255,.55));
+  border-color: rgba(89,167,255,.35);
+}
+.btn:hover{transform: translateY(-1px); transition: transform .15s ease;}
+
+.hero-right{padding:18px; display:flex; flex-direction:column; gap:12px;}
+.avatar-wrap{display:flex; gap:14px; align-items:center;}
+.avatar{
+  width:72px; height:72px; border-radius:22px;
+  background:
+    radial-gradient(35px 35px at 30% 25%, rgba(89,167,255,.9), transparent 65%),
+    radial-gradient(45px 45px at 60% 70%, rgba(47,107,255,.75), transparent 60%),
+    linear-gradient(135deg, rgba(11,19,43,.2), rgba(11,19,43,.65));
+  border:1px solid rgba(89,167,255,.25);
+  box-shadow: 0 18px 60px rgba(47,107,255,.22);
+}
+
+.kv{display:grid; grid-template-columns: 1fr; gap:10px;}
+.kv-item{padding:12px; border-radius:14px; border:1px solid rgba(147,197,253,.16); background: rgba(7,11,24,.35);}
+.kv-title{font-size:12px; color: rgba(147,197,253,.95); margin-bottom:4px;}
+.kv-value{font-weight:800; font-size:13px;}
+
+.section{padding:26px 0;}
+.section h2{margin:0 0 14px; font-size:20px; letter-spacing:.2px;}
+
+.grid2{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
+@media(max-width: 900px){ .grid2{grid-template-columns: 1fr;} }
+
+.item{
+  padding:16px;
+  border-radius: var(--radius);
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(11,19,43,.78), rgba(10,16,38,.65));
+}
+
+.item-top{display:flex; align-items:flex-start; justify-content:space-between; gap:12px;}
+.item h3{margin:0; font-size:16px;}
+.badge{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid rgba(89,167,255,.25); background: rgba(11,19,43,.55); color: rgba(219,234,254,.95); white-space:nowrap;}
+
+.ul{margin:10px 0 0; padding-left: 18px; color: rgba(219,234,254,.88);}
+.ul li{margin:6px 0; line-height:1.5;}
+
+.skill-grid{display:flex; flex-wrap:wrap; gap:10px;}
+.skill{padding:8px 10px; border-radius:999px; border:1px solid rgba(89,167,255,.22); background: rgba(11,19,43,.55); color: rgba(219,234,254,.95); font-weight:700; font-size:13px;}
+
+.footer{
+  padding:34px 0 44px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(7,11,24,.15), rgba(5,7,15,.45));
+}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; color: rgba(219,234,254,.7); font-size:13px;}
+
+/* Make images optional (no external requirements) */
+.img-placeholder{
+  height: 120px;
+  border-radius: 14px;
+  border: 1px dashed rgba(89,167,255,.25);
+  background:
+    radial-gradient(150px 80px at 30% 30%, rgba(47,107,255,.25), transparent 60%),
+    linear-gradient(180deg, rgba(11,19,43,.45), rgba(10,16,38,.35));
+}
+
